@@ -1,0 +1,217 @@
+/* colors */
+
+:root{
+    --main-color: rgba(19, 82, 255, 0.719);
+    --second-color: rgba(141, 19, 255, 0.63);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    transition: .3s;
+
+    font-family: 'KyivTypeSans';
+}
+
+@font-face {
+    font-family: KyivTypeSans;
+    src: url('KyivTypeSans-VarGX.ttf');
+}
+
+section.slider{
+    /* background: rgba(0, 0, 0, 0.349); */
+    width: 50%;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    margin: auto;
+
+    /* border: 1px solid; */
+}
+
+h3{
+    margin: 10px auto;
+    max-width: fit-content;
+    position: relative;
+    letter-spacing: 3px;
+    font-size: 26px;
+}
+h3::before{
+    content: '';
+    height: 3px;
+    width: 20%;
+    background: var(--main-color);
+    position: absolute;
+    left: -10px;
+    top: -5px;
+}
+h3::after{
+    content: '';
+    height: 3px;
+    width: 50%;
+    background: var(--second-color);
+    position: absolute;
+    right: -20px;
+    bottom: -10px;
+}
+
+.slider_container{
+    margin: 0px auto;
+    width: 50%;
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+    height: 110%;
+}
+.slide {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 100px;
+    bottom: 0;
+    right: 0;
+    left: -30%;
+    height: fit-content;
+    margin-top: 20px;
+    filter: blur(2px);
+    transform: scale(.7);
+}
+.slide.active{
+    top: 0;
+    left: 0;
+    filter: blur(0);
+    transform: scale(1);
+    background: rgba(255,255,255,0.7);
+    z-index: 6;
+    transition: .5s;
+}
+.slider .img{
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+.slider img{
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    object-fit: cover;
+    background-position: center center;
+}
+.slider .img::after{
+    content: '';
+    background: var(--main-color);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    transform: scale(1.03) rotate(15deg);
+    z-index: -2;
+    border-radius: 30px;
+    transition: .3s;
+}
+.slide .about_person{
+    margin-top: 20px;
+    height: max-content;
+    text-align: center;
+    overflow: hidden;
+}
+.slide .about_person > *{
+    margin-top: 10px;
+}
+.slide .about_person .name{
+    letter-spacing: 1.5px;
+    font-size: 16px;
+    transition: .3s;
+}
+.slide .about_person .post{
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 5px;
+    text-transform: uppercase;
+    position: relative;
+    /* top: -50px; */
+    color: transparent;
+}
+.slide .about_person p{
+    position: relative;
+    color: transparent;
+    /* bottom: -60px; */
+}
+
+
+/* slide hover effect */
+
+.slide.active:hover .img::after{
+    left: 5%;
+    transform: scale(1.01) rotate(-2deg);
+    transition: .5s;
+    background: var(--second-color);
+}
+.slide.active:hover .name{
+    letter-spacing: 3.5px;
+    transition: .8s;
+}
+.slide.active:hover .post{
+    top: 0;
+    color: var(--main-color);
+    transition: .8s;
+}
+.slide.active:hover .about_person p{
+    bottom: 0;
+    color: black;
+    transition: .8s;
+}
+
+
+/* slider navigation */
+.slider_nav{
+    width: 10%;
+    position: absolute;
+    top: 40%;
+    bottom: 0;
+    height: fit-content;
+    /* margin-top: auto; */
+}
+.slider_nav ol{
+    position: relative;
+    counter-reset: num;
+}
+.slider_nav li{
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 30px;
+    width: 10px;
+    height: 10px;
+    background: var(--second-color);
+}
+.slider_nav li::before{
+    content: counter(num); 
+    counter-increment: num;
+    color:white;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto auto;
+    border-radius: 30px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    text-align: center;
+}
+.slider_nav li.active{
+    background: var(--main-color);
+    box-shadow: 1px 2px 2px silver;
+    transform: scale(1.06);
+}

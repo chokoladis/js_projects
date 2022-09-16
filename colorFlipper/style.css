@@ -1,0 +1,72 @@
+*{
+    transition-duration: .3s;
+}
+
+body{
+    background: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.action{
+    width: 30%;
+    height: 30%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    vertical-align: center;
+    margin: auto auto;
+    color: white;
+}
+.action > * {
+    border-radius: 7px;
+    border: 1px solid;
+    padding: 6px 12px;
+}
+.action .msg_bg{
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 26px;
+    border: 0;
+    background: rgb(41, 15, 88);
+
+}
+.action .btn{
+    text-transform: uppercase;
+    max-width: fit-content;
+    text-align: center;
+    padding: 6px 12px;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+.action .btn {
+    background: linear-gradient(149deg, rgba(24, 187, 157, 0) 0%, rgba(106, 57, 175, 0) 42%, rgba(187, 24, 149, 0) 62% rgba(115, 53, 134, 0) 10%);
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0);
+    transform: scale(1.0);
+}
+
+.action .btn:hover {
+    background: linear-gradient(149deg, rgb(17, 216, 180) 0%, rgb(45, 119, 230)42%, rgba(187,24,148,1) 72%, rgb(70, 9, 88) 100%);
+    animation: gradient 6s infinite linear;
+    background-size: 300%;
+    /* border-color: rgb(235, 250, 143); */
+    box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.363);
+    border-color: transparent;
+    transform: scale(1.05);
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 80% 0%;
+    }
+    50% {
+        background-position: 20% 100%;
+    }
+    100% {
+        background-position: 80% 0%;
+    }
+}
