@@ -5,9 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modal</title>
+    <link rel="stylesheet" href="assets/font-awesome/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    
+
+    <div class="grid nature">
+        <img src="img/nature-1.jpeg" alt="nature-1" title="nature-1">
+        <img src="img/nature-2.jpeg" alt="nature-2" title="nature-2">
+        <img src="img/nature-3.jpeg" alt="nature-3" title="nature-3">
+    </div>
+
+    <div class="grid city">
+        <img src="img/city-1.jpeg" alt="city-1" title="city-1">
+        <img src="img/city-2.jpeg" alt="city-2" title="city-2">
+        <img src="img/city-3.jpeg" alt="city-3" title="city-3">
+        <img src="img/city-4.jpeg" alt="city-4" title="city-4">
+        <img src="img/city-5.jpeg" alt="city-5" title="city-5">
+    </div>
+
+    <div class="modal">
+        <button class="close-btn">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-content">
+            
+            <button class="prev-btn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <img src="img/city-1.jpeg" class="main-img" alt="city-1" title="city-1">
+            <h3 class="image-name">image name</h3>
+            <div class="modal-images">
+              <img src="img/city-1.jpeg" title="city-1" id="1" class="modal-img" >
+              <img src="img/city-2.jpeg" title="city-2" id="2" class="modal-img selected">
+            </div>
+
+            <button class="next-btn">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+        </div>
+    </div>
+
+    <a target="_blank" href="https://icons8.com/icon/71200/удалить">Удалить</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    <script src="js/JQuery.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

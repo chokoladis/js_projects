@@ -1,0 +1,146 @@
+*, *:hover{
+    transition: .3s;
+}
+
+@keyframes fade-in {
+    from{
+        opacity: 0;
+        z-index: 5;
+        visibility: visible;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    from{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    to{
+        opacity: 0;
+        z-index: -1;
+        visibility: hidden;
+    }
+}
+
+body{
+    background: rgb(252, 252, 252);
+    font-family: 'font-awesonme';
+}
+
+.grid{
+    width: 70%;
+    display: grid;
+    grid-gap: 3%;
+    margin: 20px auto;
+    z-index: 3;
+    margin-top: 80px;
+}
+.grid.nature {
+    grid-template-columns: 32% 32% 32%;
+    grid-template-rows: 300px;
+}
+.grid img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 1px 3px 8px rgb(177, 177, 177);
+    cursor: zoom-in;
+}
+
+.grid.city {
+    margin-top: 8%;
+    grid-template-columns: repeat(3,32%);
+    grid-template-rows: repeat(2, 300px);
+}
+
+.grid img:hover{
+    box-shadow: 1px 3px 10px rgb(80, 80, 80);
+    transform: scale(1.01);
+}
+
+/* modal window */
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: rgba(61, 61, 61, 0.959);
+
+    z-index: -1;
+    visibility: hidden;
+    opacity: 0;
+    padding: 5%;
+}
+.modal button{
+    border: 0;
+    background: transparent;
+    color: white;
+    filter: invert(0);
+    font-size: 40px;
+    cursor: pointer;
+}
+.close-btn{
+    position: relative;
+    display: block;
+    margin-left: auto;
+}
+.modal-content{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+.modal-content button{
+    position: absolute;
+}
+.modal-content > img{
+    width: 70%;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.modal-content > *{
+    margin: 0px auto;
+}
+.modal-content .main-img{
+    border-radius: 8px;
+}
+.prev-btn{
+    position: relative;
+    top: 30%;
+}
+.next-btn{
+    position: relative;
+    top: 30%;
+    right: 5%;
+}
+.modal-content h3{
+    margin: 15px auto;
+}
+.modal-images{
+    display: grid;
+    grid-template-columns: repeat(5,20%);
+    grid-template-rows: minmax(120px, 200px );
+    width: 100%;
+}
+.modal-images img{
+    width: 100%;
+    height: 100%;   
+    object-fit: cover;
+    filter: brightness(0.7) saturate(40%);
+}
+.modal-images img:hover, .modal-images img.active {
+    filter: brightness(1) saturate(100%);;
+}

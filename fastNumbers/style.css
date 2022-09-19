@@ -1,0 +1,101 @@
+*{
+    transition: .3s;
+    margin: 0;
+}
+*:hover,*::after,*::before{
+    transition: .3s;
+}
+
+body{
+    background: rgb(26, 26, 26);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+section{
+    /* background: #000; */
+    width: 70%;
+    margin: 0px auto;
+    margin-top: 100px;
+    color: white;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+.block{
+    /* border: 1px solid; */
+    width: 23%;
+    padding: 40px;
+    display: block;
+    border-radius: 5px;
+    position: relative;
+    background: rgb(0, 0, 0);
+    
+}
+.block::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    
+    box-shadow: 0px 3px 20px rgb(255, 217, 0);
+    
+    background: linear-gradient(215deg, rgb(255, 0, 234), rgb(14, 118, 255), rgb(255, 166, 0) );
+    background-size: 300%;
+    -webkit-animation: Animation 5s ease infinite;
+    -moz-animation: Animation 5s ease infinite;
+    animation: Animation 5s ease infinite;
+}
+@-webkit-keyframes Animation {
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+}
+@-moz-keyframes Animation {
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+}
+@keyframes Animation { 
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+}
+
+.block:nth-child(2):after{
+    background: linear-gradient(300deg, rgb(153, 0, 255), rgb(14, 255, 195), rgb(255, 251, 0) );
+    box-shadow: 0px 3px 20px rgb(0, 255, 149);
+    background-size: 300%;
+    -webkit-animation: Animation 5s ease infinite;
+    -moz-animation: Animation 5s ease infinite;
+    animation: Animation 5s ease infinite;
+}
+.block:nth-child(3):after{
+    box-shadow: 0px 3px 20px rgb(47, 0, 255);
+
+    background: linear-gradient(20deg, rgb(255, 0, 179), rgb(14, 90, 255), rrgb(0, 255, 85));
+    background-size: 300%;
+    -webkit-animation: Animation 5s ease infinite;
+    -moz-animation: Animation 5s ease infinite;
+    animation: Animation 5s ease infinite;
+}
+
+.block:hover::after{
+    height: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+h2{
+    font-size: 40px;
+    z-index: 10;
+    position: relative;
+}
+p{
+    font-size: 24px;
+    z-index: 10;
+    position: relative;
+}
