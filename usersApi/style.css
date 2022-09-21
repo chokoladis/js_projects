@@ -3,7 +3,7 @@
     margin: 0;
 }
 *:hover,*::after,*::before{
-    transition: .3s;
+    transition: .1s;
 }
 
 body{
@@ -13,6 +13,7 @@ body{
 }
 
 section{
+    height: 535px;
     border: 1px solid;
     background: white;
     margin: 0px auto;
@@ -21,7 +22,7 @@ section{
     position: relative;
 }
 .info_block{
-    width: 60%;
+    width: 45%;
     background: rgb(240, 238, 238);
     margin: 0px auto;
     border-radius: 10px;
@@ -67,7 +68,7 @@ section{
 .content{
     margin: 0px auto;
     margin-top: 50px;
-    width: max-content;
+    width: 100%;
     text-align: center;   
 }
 .content p{
@@ -81,19 +82,33 @@ section{
 ul.nav{
     display: flex;
     justify-content: space-between;
+    padding: 0;
+    margin-top: 20px;
+    font-size: 26px;
 }
 ul.nav > * {
     display: block;
+    padding: 20px 40px;
+    color: rgba(87, 0, 250, 0.479);
 }
-/* .avatar::after{
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background: red;
-    transform: scale(1.1);
-    border-radius: 50%;
-    top: 0;
-    z-index: -4;
+ul.nav li:hover{
+    color: rgba(19, 102, 255, 0.712);
+    /* text-shadow: 0px 0px 2px; */
+}
+.btn{
+    background: red;    
     display: block;
-} */
+    max-width: 120px;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin: 0 auto;
+    cursor: pointer;
+    color: white;
+    text-transform: uppercase;
+    box-shadow: 0px 0px 15px rgba(119, 119, 119, 0.644);
+}
+.btn:hover{
+    background: rgb(106, 0, 206);
+    box-shadow: 0px 0px 15px rgba(119, 119, 119, 0.548);
+}
